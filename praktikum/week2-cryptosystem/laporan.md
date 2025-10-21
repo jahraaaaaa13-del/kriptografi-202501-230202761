@@ -20,7 +20,25 @@ Kelas: 5IKRB
 3. Implementasi program sederhana.
 4. Simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar Cipher).
 
-Klasifikasi Simetris dan Asimetris
+## file: praktikum/week2-cryptosystem/src/simple_crypto.py
+
+def encrypt(plaintext, key): result = "" for char in plaintext: if char.isalpha(): shift = 65 if char.isupper() else 97 result += chr((ord(char) - shift + key) % 26 + shift) else: result += char return result
+
+def decrypt(ciphertext, key): result = "" for char in ciphertext: if char.isalpha(): shift = 65 if char.isupper() else 97 result += chr((ord(char) - shift - key) % 26 + shift) else: result += char return result
+
+if name == "main": message = "<230202761>" key = 5
+
+enc = encrypt(message, key)
+dec = decrypt(enc, key)
+
+print("Plaintext :", message)
+print("Ciphertext:", enc)
+print("Decrypted :", dec)
+Ekspektasi Keluaran
+
+Plaintext : <230202761> Ciphertext: <230202761> Decrypted : <230202761>
+
+## Klasifikasi Simetris dan Asimetris
 
 Kriptografi Simetris menggunakan satu kunci rahasia yang sama untuk mengenkripsi dan mendekripsi data. Keunggulan utamanya adalah kecepatan proses yang sangat tinggi, menjadikannya ideal untuk mengenkripsi data dalam jumlah besar. Namun, kelemahan terbesarnya adalah kesulitan dan risiko dalam distribusi kunci yang aman kepada semua pihak yang berkomunikasi. Contoh algoritmanya adalah AES (Advanced Encryption Standard) dan DES (Data Encryption Standard).
 
@@ -68,7 +86,7 @@ def decrypt(ciphertext, key):
     return result
 
 if __name__ == "__main__":
-    message = "Khoirun Nisa Az-Zahra"
+    message = "230202761"
     key = 5
 
     enc = encrypt(message, key)
@@ -86,7 +104,8 @@ Hasil dari program yang diberikan dari github menunjukan bahwa enkripsi yang dig
 
 <img width="1366" height="768" alt="Screenshot" src="https://github.com/user-attachments/assets/1c6f844d-46d3-4ff3-a66c-e023d6ae8b3a" />
 
-<img width="1366" height="768" alt="Screenshot source code" src="https://github.com/user-attachments/assets/310c443a-0c03-463e-964a-da92cfa475f1" />
+<img width="1366" height="768" alt="Screenshot source code1" src="https://github.com/user-attachments/assets/b682dd5a-f4ff-4911-8e6c-3538153e91d3" />
+
 
 ---
 
