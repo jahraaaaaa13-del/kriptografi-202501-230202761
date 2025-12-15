@@ -97,5 +97,4 @@ commit abc12345
 Author: Khoirun Nisa Az-Zahra <jahraaaaaa.13@gmail.com>
 Date:   2025-12-16
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
 ```
